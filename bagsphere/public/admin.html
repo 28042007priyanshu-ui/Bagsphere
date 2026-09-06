@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BagSphere — Admin</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body class="dashboard-page">
+<header class="nav wrap">
+  <a class="brand" href="/"><span class="brand-mark">B</span><span>Bag<span>Sphere</span></span></a>
+  <nav class="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/my">My Bag</a>
+    <a class="nav-link active" href="/admin">Admin</a>
+  </nav>
+</header>
+<main class="dash wrap">
+
+  <div id="loginPanel" class="admin-login">
+    <div class="section-label">ADMIN ACCESS</div>
+    <h1>Sign in to <em>manage BagSphere.</em></h1>
+    <form id="loginForm" class="form-card admin-login-card">
+      <label>Admin password<input id="adminPassword" type="password" required placeholder="Enter admin password" autocomplete="current-password"></label>
+      <button class="btn btn-primary full" type="submit">Sign in <span>→</span></button>
+      <p id="loginError" class="admin-error"></p>
+    </form>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <div class="dash-head">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Admin dashboard</div>
+        <h1>All registered <em>bags.</em></h1>
+        <p>Manage every BagSphere profile from one place.</p>
+      </div>
+      <button id="logoutBtn" class="text-btn">Log out</button>
+    </div>
+
+    <div class="admin-stats">
+      <div class="stat-card"><span class="section-label">TOTAL BAGS</span><b id="statBags">0</b></div>
+      <div class="stat-card"><span class="section-label">TOTAL FINDER REPORTS</span><b id="statReports">0</b></div>
+    </div>
+
+    <div class="admin-toolbar">
+      <input id="searchBox" type="text" placeholder="Search by name, student ID, phone or bag ID">
+      <button id="refreshBtn" class="text-btn">Refresh ↻</button>
+    </div>
+
+    <div class="location-panel admin-table-wrap">
+      <table class="admin-table">
+        <thead><tr><th>Bag ID</th><th>Student</th><th>Student ID</th><th>Phone</th><th>Reports</th><th>Last report</th><th>Actions</th></tr></thead>
+        <tbody id="bagsTableBody"></tbody>
+      </table>
+      <div id="emptyState" class="empty hidden">No bags registered yet.</div>
+    </div>
+  </div>
+</main>
+
+<div id="detailModal" class="modal hidden">
+  <div class="modal-card admin-detail-card">
+    <button class="close" onclick="closeDetail()">×</button>
+    <div id="detailBody"></div>
+  </div>
+</div>
+
+<script src="/assets/admin.js"></script>
+</body>
+</html>

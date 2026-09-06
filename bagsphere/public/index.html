@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BagSphere — Your bag, found.</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="orb orb-a"></div><div class="orb orb-b"></div>
+<header class="nav wrap">
+  <a class="brand" href="/"><span class="brand-mark">B</span><span>Bag<span>Sphere</span></span></a>
+  <nav class="nav-links">
+    <a class="nav-link" href="/my">My Bag</a>
+    <a class="nav-link" href="/admin">Admin</a>
+    <a class="nav-link" href="#register">Register a bag <span>→</span></a>
+  </nav>
+</header>
+
+<main>
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> NFC-powered campus recovery</div>
+    <h1>Lost your bag?<br><em>Let it find you.</em></h1>
+    <p class="hero-text">BagSphere gives your college bag a digital identity. One tap lets a finder reach you and share where your bag was found.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#register">Protect my bag <span>↗</span></a>
+      <a class="text-btn" href="#how">How it works <span>↓</span></a>
+    </div>
+    <div class="trust-row"><span>✓ No app needed</span><span>✓ Privacy-first</span><span>✓ Works on phones</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="phone">
+      <div class="phone-top"><span>09:41</span><span>● ● ●</span></div>
+      <div class="finder-mini">
+        <div class="mini-tag">BAGSPHERE</div>
+        <div class="avatar">A</div>
+        <h3>Alex's bag</h3><p>Student ID · GEU-24108</p>
+        <div class="message">“Hey! This bag belongs to me. Thanks for helping me get it back 💚”</div>
+        <div class="mini-call">☎ Call owner</div>
+        <div class="mini-location">⌖ Share find location</div>
+      </div>
+      <div class="phone-bottom"></div>
+    </div>
+    <div class="float-card"><span class="float-icon">⌖</span><div><b>Location received</b><small>Tap 2 minutes ago</small></div></div>
+  </div>
+</section>
+
+<section id="how" class="steps wrap">
+  <div class="section-label">THE BAGSPHERE FLOW</div>
+  <h2>Three taps between <span>lost</span> and found.</h2>
+  <div class="step-grid">
+    <article><b>01</b><span class="step-icon">⌁</span><h3>Tap the tag</h3><p>A finder taps the NFC tag on your bag. No app or account required.</p></article>
+    <article><b>02</b><span class="step-icon">☎</span><h3>Reach the owner</h3><p>They see your message and can call you directly from their phone.</p></article>
+    <article><b>03</b><span class="step-icon">⌖</span><h3>Share the location</h3><p>With permission, their phone sends the found location to your dashboard.</p></article>
+  </div>
+</section>
+
+<section id="register" class="register wrap">
+  <div class="register-copy">
+    <div class="section-label">START IN A MINUTE</div>
+    <h2>Give your bag a <span>digital safety net.</span></h2>
+    <p>Create a BagSphere profile and get a unique NFC URL. Put that URL on an NFC tag and attach it to your bag.</p>
+    <div class="privacy-note"><span>◎</span><div><b>Privacy by design</b><br>We never ask the finder for your home address. Only your chosen profile details are shown.</div></div>
+  </div>
+  <form id="registerForm" class="form-card">
+    <div class="form-title"><div><span class="section-label">BAG PROFILE</span><h3>Register your bag</h3></div><span class="shield">✓</span></div>
+    <label>Student name<input name="student_name" placeholder="e.g. Priyanshu Joshi" required></label>
+    <div class="two">
+      <label>Student ID<input name="student_id" placeholder="e.g. GEU-24108" required></label>
+      <label>Phone number<input name="phone" type="tel" placeholder="+91 98••••••••" required></label>
+    </div>
+    <label>Message for the finder<textarea name="message" rows="3" placeholder="Thanks for finding my bag! Please call me so I can collect it."></textarea></label>
+    <label class="photo-drop">Profile photo <span>optional · shown on finder page</span><input id="photo" type="file" accept="image/*"></label>
+    <button class="btn btn-primary full" type="submit">Create my BagSphere tag <span>→</span></button>
+    <p class="fine">By registering, you agree to show the entered details to someone who finds your bag.</p>
+  </form>
+</section>
+
+<section class="footer-note wrap">
+  <div><b>BagSphere</b> · College lost-bag recovery</div>
+  <div>Built for campus life · <a href="#register">Protect a bag</a></div>
+</section>
+</main>
+
+<div id="resultModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close" onclick="closeModal()">×</button>
+    <div class="success-mark">✓</div><div class="section-label">TAG READY</div>
+    <h2>Your bag has a digital identity.</h2>
+    <p>Write this unique URL to your NFC tag.</p>
+    <div class="url-box"><code id="tagUrl"></code><button onclick="copyTag()">Copy</button></div>
+    <a id="dashLink" class="btn btn-primary full" href="#">Open owner dashboard →</a>
+    <p class="fine">Keep your dashboard link private. The NFC bag page itself is safe to share.</p>
+  </div>
+</div>
+<script src="/assets/app.js"></script>
+</body>
+</html>

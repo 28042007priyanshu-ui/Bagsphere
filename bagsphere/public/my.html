@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BagSphere — My Bag</title><link rel="stylesheet" href="/assets/style.css"></head>
+<body class="dashboard-page">
+<header class="nav wrap">
+  <a class="brand" href="/"><span class="brand-mark">B</span><span>Bag<span>Sphere</span></span></a>
+  <nav class="nav-links">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link active" href="/my">My Bag</a>
+    <a class="nav-link" href="/admin">Admin</a>
+  </nav>
+</header>
+<main class="dash wrap">
+  <div class="dash-head">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Bag owner access</div>
+      <h1>Open your <em>bag dashboard.</em></h1>
+      <p>Enter the Bag ID and owner token you were given when you registered your bag.</p>
+    </div>
+  </div>
+  <form id="myForm" class="form-card" style="max-width:480px">
+    <div class="form-title"><div><span class="section-label">MY BAG</span><h3>Find my dashboard</h3></div><span class="shield">✓</span></div>
+    <label>Bag ID<input name="bag" placeholder="e.g. BG-A1B2C3D4" required autocomplete="off"></label>
+    <label>Owner token<input name="token" placeholder="e.g. OWN-XXXXXXXXXXXXXXXX" required autocomplete="off"></label>
+    <button class="btn btn-primary full" type="submit">Open dashboard <span>→</span></button>
+    <p id="myError" class="admin-error"></p>
+    <p class="fine">Don't have a bag yet? <a href="/#register">Register one here.</a></p>
+  </form>
+</main>
+<script src="/assets/my.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+bag_id=BG-EEB1D023
+latitude=30.3192946808
+longitude=78.0134436777
+timestamp=1788524327822
